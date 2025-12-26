@@ -1,0 +1,4 @@
+-- Replace multiple patterns using regex
+SELECT
+    REGEXP_REPLACE(description, 'bad|slow', 'improved', 'g') AS cleaned_text
+FROM users;
