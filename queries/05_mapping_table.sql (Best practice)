@@ -1,0 +1,18 @@
+-- Mapping table
+CREATE TABLE status_map (
+    old_value VARCHAR(10),
+    new_value VARCHAR(20)
+);
+
+INSERT INTO status_map VALUES
+('p', 'pending'),
+('c', 'completed'),
+('r', 'rejected');
+
+-- Query using join
+SELECT
+    u.id,
+    COALESCE(m.new_value, u.status) AS status_full
+FROM users u
+LEFT JOIN status_map m
+ON u.status = m.old_value;
