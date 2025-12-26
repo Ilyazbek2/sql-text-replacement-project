@@ -1,0 +1,6 @@
+git init
+git add .
+git commit -m "SQL text replacement project"
+git branch -M main
+git remote add origin https://github.com/yourusername/sql-text-replacement-project
+git push -u origin main
